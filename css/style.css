@@ -1,0 +1,55 @@
+* h1{
+  border: 2px solid green;
+  background-color: beige;
+}
+
+[title~="flower"] {
+  border: 5px solid black;
+}
+div > p {
+  background-color: gold;
+  border: 1px solid gray;
+} 
+a:hover {
+  background-color: yellow;
+  font-size: 18px;
+}
+input::placeholder {
+  color: red;
+  opacity: 0.5;
+}
+p::after { 
+  content: " - Remember this";
+}
+@property --startColor {
+  syntax: "<color>";
+  initial-value: #EADEDB;
+  inherits: false;
+}
+
+@property --endColor {
+  syntax: "<color>";
+  initial-value: #BC70A4;
+  inherits: false;
+}
+
+.ex1 {
+  background: linear-gradient(var(--startColor), var(--endColor));
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    --startColor: #EADEDB;
+    --endColor: #BC70A4;
+  }
+  50% {
+    --startColor: #BC70A4;
+    --endColor: #BFD641;
+  }
+}
+
+#grad1 {
+  height: 200px;
+}
